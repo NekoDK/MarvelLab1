@@ -34,7 +34,12 @@ import com.example.marvellab1.ui.theme.Padding
 import kotlin.math.abs
 
 @Composable
-fun CardItem(navController: NavController, onClick: (Hero) -> Unit, hero: Hero, state: LazyListState){
+fun CardItem(
+    navController: NavController,
+    onClick: (Hero) -> Unit,
+    hero: Hero,
+    state: LazyListState
+) {
     val pad = Padding()
 
     val index = hero.IdHero

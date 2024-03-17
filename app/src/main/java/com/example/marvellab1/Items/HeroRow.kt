@@ -14,7 +14,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.marvellab1.Data.Hero
 import com.example.marvellab1.Data.HeroData
@@ -26,7 +25,7 @@ import com.example.marvellab1.ui.theme.Padding
 
 fun HeroRow(navController: NavController, onClick: (Hero) -> Unit) {
     val pad = Padding()
-    val heroList =  HeroData.getHero()
+    val heroList = HeroData.getHero()
     val state = rememberLazyListState()
 
     val snappingLayout = remember(state) { SnapLayoutInfoProvider(state) }
@@ -41,8 +40,7 @@ fun HeroRow(navController: NavController, onClick: (Hero) -> Unit) {
 
         )
     {
-        items(heroList) {
-                hero ->
+        items(heroList) { hero ->
             CardItem(navController = navController, onClick = onClick, hero = hero, state = state)
         }
     }

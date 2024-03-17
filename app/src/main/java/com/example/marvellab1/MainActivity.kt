@@ -25,8 +25,7 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             val viewModel: HeroViewModel by viewModels()
             MarvelLab1Theme {
-                Surface(modifier = Modifier.fillMaxSize(), color = Color.DarkGray) {
-                }
+                Surface(modifier = Modifier.fillMaxSize(), color = Color.DarkGray) {}
 
                 NavHost(navController = navController, startDestination = "scr1") {
                     composable("scr1") {
@@ -42,8 +41,7 @@ class MainActivity : ComponentActivity() {
                         val hero = viewModel.getHeroById(heroId)
                         if (hero != null) {
                             HeroScreen(
-                                onClick = { navController.navigate("scr1") },
-                                hero = hero
+                                onClick = { navController.navigate("scr1") }, hero = hero
                             )
                         } else {
                             // Jopa

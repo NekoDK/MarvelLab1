@@ -21,15 +21,18 @@ import com.example.marvellab1.R
 import com.example.marvellab1.ui.theme.Padding
 
 @Composable
-fun MainScreen(navController: NavController, onClick: (Hero) -> Unit){
+fun MainScreen(navController: NavController, onClick: (Hero) -> Unit) {
     val pad = Padding()
     Image(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .rotate(180f),
         alignment = Alignment.TopEnd,
         painter = painterResource(id = R.drawable.triangle),
-        contentDescription = null)
-    Column(modifier=Modifier,
+        contentDescription = null
+    )
+    Column(
+        modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -37,12 +40,13 @@ fun MainScreen(navController: NavController, onClick: (Hero) -> Unit){
             modifier = Modifier
                 .padding(pad.big)
                 .size(width = 160.dp, height = 45.dp),
-            contentDescription = null)
+            contentDescription = null
+        )
         Text(
             text = "Choose your hero",
             fontSize = 36.sp,
             color = Color.White,
         )
-        HeroRow(navController = navController ,onClick = onClick)
+        HeroRow(navController = navController, onClick = onClick)
     }
 }

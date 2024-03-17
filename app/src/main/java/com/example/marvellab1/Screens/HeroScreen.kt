@@ -28,16 +28,17 @@ import com.example.marvellab1.R
 import com.example.marvellab1.ui.theme.Padding
 
 @Composable
-fun HeroScreen(onClick: () -> Unit, hero: Hero){
+fun HeroScreen(onClick: () -> Unit, hero: Hero) {
     val pad = Padding()
-    Box(modifier = Modifier
-        .fillMaxSize()
-    ){
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
         AsyncImage(
             model = hero.cardImageUrl,
             contentDescription = null,
             contentScale = ContentScale.FillHeight,
-            modifier =  Modifier.matchParentSize(),
+            modifier = Modifier.matchParentSize(),
         )
         Button(
             onClick = { onClick() },
@@ -62,7 +63,7 @@ fun HeroScreen(onClick: () -> Unit, hero: Hero){
                 text = stringResource(id = hero.cardText),
                 color = Color.White,
                 fontSize = 24.sp,
-                modifier = Modifier.padding(pad.medium,0.dp,0.dp,0.dp)
+                modifier = Modifier.padding(pad.medium, 0.dp, 0.dp, 0.dp)
             )
             Text(
                 text = stringResource(id = hero.cardDesc),
