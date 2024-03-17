@@ -44,10 +44,16 @@ class MainActivity : ComponentActivity() {
                                 onClick = { navController.navigate("scr1") }, hero = hero
                             )
                         } else {
-                            // Jopa
+                            val heroId = 0
+                            val hero = viewModel.getHeroById(heroId)
+                            if (hero != null) {
+                                HeroScreen(
+                                    onClick = { navController.navigate("scr1") }, hero = hero
+                                )
+                            }
                         }
-                    }
 
+                    }
                 }
             }
         }
