@@ -1,11 +1,10 @@
-package com.example.marvellab1
+package com.example.marvellab1.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.material3.Text
@@ -16,9 +15,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.marvellab1.Data.Hero
+import com.example.marvellab1.Items.HeroRow
+import com.example.marvellab1.R
+import com.example.marvellab1.ui.theme.Padding
 
 @Composable
 fun MainScreen(navController: NavController, onClick: (Hero) -> Unit){
+    val pad = Padding()
     Image(
         modifier = Modifier.fillMaxSize()
             .rotate(180f),
@@ -31,8 +35,8 @@ fun MainScreen(navController: NavController, onClick: (Hero) -> Unit){
         Image(
             painter = painterResource(id = R.drawable.mar),
             modifier = Modifier
-                .padding(30.dp)
-                .size(width = 140.dp, height = 40.dp),
+                .padding(pad.big)
+                .size(width = 160.dp, height = 45.dp),
             contentDescription = null)
         Text(
             text = "Choose your hero",

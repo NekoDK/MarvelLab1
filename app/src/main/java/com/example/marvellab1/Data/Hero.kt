@@ -1,4 +1,4 @@
-package com.example.marvellab1
+package com.example.marvellab1.Data
 
 data class Hero(
     val IdHero: Int,

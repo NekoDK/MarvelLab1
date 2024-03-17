@@ -1,4 +1,4 @@
-package com.example.marvellab1
+package com.example.marvellab1.Screens
 
 
 import androidx.compose.foundation.layout.Arrangement
@@ -23,10 +23,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.marvellab1.Hero
+import com.example.marvellab1.Data.Hero
+import com.example.marvellab1.R
+import com.example.marvellab1.ui.theme.Padding
 
 @Composable
 fun HeroScreen(onClick: () -> Unit, hero: Hero){
+    val pad = Padding()
     Box(modifier = Modifier
         .fillMaxSize()
     ){
@@ -59,13 +62,13 @@ fun HeroScreen(onClick: () -> Unit, hero: Hero){
                 text = stringResource(id = hero.cardText),
                 color = Color.White,
                 fontSize = 24.sp,
-                modifier = Modifier.padding(16.dp,0.dp,0.dp,0.dp)
+                modifier = Modifier.padding(pad.medium,0.dp,0.dp,0.dp)
             )
             Text(
                 text = stringResource(id = hero.cardDesc),
                 color = Color.White,
                 fontSize = 24.sp,
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier.padding(pad.medium)
             )
         }
     }

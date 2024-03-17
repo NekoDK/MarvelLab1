@@ -1,4 +1,4 @@
-package com.example.marvellab1
+package com.example.marvellab1.Items
 
 
 import androidx.compose.foundation.clickable
@@ -29,11 +29,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import com.example.marvellab1.Data.Hero
+import com.example.marvellab1.ui.theme.Padding
 import kotlin.math.abs
 
 @Composable
-fun CardItem(navController: NavController,onClick: (Hero) -> Unit, hero: Hero, state: LazyListState){
-
+fun CardItem(navController: NavController, onClick: (Hero) -> Unit, hero: Hero, state: LazyListState){
+    val pad = Padding()
 
     val index = hero.IdHero
     val scale by remember {
@@ -79,7 +81,7 @@ fun CardItem(navController: NavController,onClick: (Hero) -> Unit, hero: Hero, s
                     text = stringResource(id = hero.cardText),
                     color = Color.White,
                     fontSize = 24.sp,
-                    modifier = Modifier.padding(16.dp)
+                    modifier = Modifier.padding(pad.medium)
                 )
             }
         }

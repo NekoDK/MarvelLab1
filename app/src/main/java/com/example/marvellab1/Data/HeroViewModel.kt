@@ -1,4 +1,4 @@
-package com.example.marvellab1
+package com.example.marvellab1.Data
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
