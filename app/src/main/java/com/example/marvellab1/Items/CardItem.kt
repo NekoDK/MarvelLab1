@@ -83,7 +83,7 @@ fun CardItem(
                 verticalArrangement = Arrangement.Bottom
             ) {
                 Text(
-                    text = stringResource(id = hero.cardText),
+                    text = hero.cardText,
                     color = Color.White,
                     fontSize = 24.sp,
                     modifier = Modifier.padding(pad.medium)

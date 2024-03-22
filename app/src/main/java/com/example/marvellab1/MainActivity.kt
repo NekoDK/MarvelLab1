@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.marvellab1.Data.Dto.CharactersDTO
 import com.example.marvellab1.Data.HeroViewModel
 import com.example.marvellab1.Screens.HeroScreen
 import com.example.marvellab1.Screens.MainScreen

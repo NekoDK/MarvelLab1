@@ -1,11 +1,14 @@
 package com.example.marvellab1.Data.Dto
 
+import com.google.gson.annotations.SerializedName
+
+
 data class CharactersDTO(
-    val attributionHTML: String,
-    val attributionText: String,
-    val code: Int,
-    val copyright: String,
-    val `data`: Data,
-    val etag: String,
-    val status: String
+    @SerializedName("name") val name: String,
+    @SerializedName("description") val description: String,
+    @SerializedName("thumbnail") val thumbnail: Image
+)
+
+data class Image(
+    @SerializedName("path") val path: String
 )

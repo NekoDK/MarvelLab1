@@ -16,7 +16,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.example.marvellab1.Data.Hero
-import com.example.marvellab1.Data.HeroData
 import com.example.marvellab1.ui.theme.Padding
 
 
@@ -27,6 +26,8 @@ fun HeroRow(navController: NavController, onClick: (Hero) -> Unit) {
     val pad = Padding()
     val heroList = HeroData.getHero()
     val state = rememberLazyListState()
+
+
 
     val snappingLayout = remember(state) { SnapLayoutInfoProvider(state) }
     Spacer(modifier = Modifier.padding(top = pad.big))
