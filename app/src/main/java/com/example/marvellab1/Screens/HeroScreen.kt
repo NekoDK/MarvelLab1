@@ -60,13 +60,13 @@ fun HeroScreen(onClick: () -> Unit, hero: Hero) {
             verticalArrangement = Arrangement.Bottom
         ) {
             Text(
-                text = stringResource(id = hero.cardText),
+                text = hero.cardText,
                 color = Color.White,
                 fontSize = 24.sp,
-                modifier = Modifier.padding(pad.medium, 0.dp, 0.dp, 0.dp)
+                modifier = Modifier.padding(pad.medium)
             )
             Text(
-                text = stringResource(id = hero.cardDesc),
+                text = hero.cardDesc,
                 color = Color.White,
                 fontSize = 24.sp,
                 modifier = Modifier.padding(pad.medium)

@@ -16,12 +16,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.marvellab1.Data.Hero
+import com.example.marvellab1.Data.HeroViewModel
 import com.example.marvellab1.Items.HeroRow
 import com.example.marvellab1.R
 import com.example.marvellab1.ui.theme.Padding
 
 @Composable
-fun MainScreen(navController: NavController, onClick: (Hero) -> Unit) {
+fun MainScreen(navController: NavController, onClick: (Hero) -> Unit, viewModel: HeroViewModel) {
     val pad = Padding()
     Image(
         modifier = Modifier
@@ -47,6 +48,6 @@ fun MainScreen(navController: NavController, onClick: (Hero) -> Unit) {
             fontSize = 36.sp,
             color = Color.White,
         )
-        HeroRow(navController = navController, onClick = onClick)
+        HeroRow(navController = navController, onClick = onClick, viewModel = viewModel)
     }
 }

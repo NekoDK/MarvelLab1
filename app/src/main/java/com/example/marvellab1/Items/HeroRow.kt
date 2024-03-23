@@ -12,21 +12,27 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.example.marvellab1.Data.Hero
-import com.example.marvellab1.Data.HeroData
+import com.example.marvellab1.Data.HeroViewModel
 import com.example.marvellab1.ui.theme.Padding
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 
-fun HeroRow(navController: NavController, onClick: (Hero) -> Unit) {
+fun HeroRow(viewModel: HeroViewModel, navController: NavController, onClick: (Hero) -> Unit) {
     val pad = Padding()
-    val heroList = HeroData.getHero()
+    var heroList = emptyList<Hero>()
+
     val state = rememberLazyListState()
+    LaunchedEffect(key1 = true) {
+        viewModel.getHeroes()
+        heroList = viewModel.heroList.value
+    }
 
     val snappingLayout = remember(state) { SnapLayoutInfoProvider(state) }
     Spacer(modifier = Modifier.padding(top = pad.big))

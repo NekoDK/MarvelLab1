@@ -31,7 +31,8 @@ class MainActivity : ComponentActivity() {
                     composable("scr1") {
                         MainScreen(navController = navController, onClick = { hero ->
                             navController.navigate("scr2/${hero.IdHero}")
-                        })
+
+                        }, viewModel)
                     }
                     composable(
                         "scr2/{heroId}",
